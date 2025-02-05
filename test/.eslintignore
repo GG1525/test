@@ -1,0 +1,12 @@
+/node_modules
+/typeDocTheme
+scripts/
+**/*.test.ts
+**/*.test.js
+.eslintrc.js
+config.ts
+**/*.d.ts
+jest.config.js
+/server
+commitlint.config.js
+dist

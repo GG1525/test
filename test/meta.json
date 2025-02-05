@@ -1,0 +1,11 @@
+{
+  "id": "test",
+  "appId": "xxx",
+  "name": "分享链接改造",
+  "version": "1.0.0",
+  "type": "resource",
+  "source": "file://pack/",
+  "configuration": {
+    "modules": ["Kdocs", "KdriveMobile", "Weboffice"]
+  }
+}
