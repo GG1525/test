@@ -1,5 +1,6 @@
 // PlugSDK START
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
+import { login } from './services/index'
 
 export default async function (sdk, { Vue }) {
   sdk.modules.kso.on('ShareFileModal.shareBox.link.render', props => {
@@ -19,9 +20,12 @@ export default async function (sdk, { Vue }) {
     // return CopyBtn
   })
 
-  sdk.modules.kso.on('ShareFileModal.shareLink.reset', props => {
+  sdk.modules.kso.on('ShareFileModal.shareLink.reset', async props => {
     console.log('shareLink>>>>>>>>>', props)
-    return props.fname + '\n' + props.addr
+    const data = await login()
+    console.log('data>>>>>>>>>>', data)
+    const newurl = props.addr.replace(/(https?:\/\/)[^/]+/, 'http://example.com')
+    return newurl
   })
 }
 // PlugSDK END
